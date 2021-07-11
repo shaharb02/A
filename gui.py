@@ -1116,20 +1116,21 @@ def run_animation_window():
 	animation_window.title("Animation")
 #############################BUTTONS FOR NEW WINDOWS
 
-Entry(root, textvar=project_name, width=12).place(x=10,y=130)
+Entry(root, textvar=project_name, width=12).grid(column = 0,row=1)
+Label(root,text="").grid(column = 0,row=2)
 
 
 hydro_button = Button(root, text="Hydro", width=12, bg="green", fg="white",command=run_hydro_window)
-hydro_button.grid(column = 0,row=1)
+hydro_button.grid(column = 0,row=3)
 
 particles_button = Button(root, text="Particles", width=12, bg="green", fg="white",command=run_particle_window)
-particles_button.grid(column = 0,row=2)
+particles_button.grid(column = 0,row=4)
 
 simulation_button = Button(root, text="Boundary Conds.", width=12, bg="green", fg="white",command=run_bound_window)
-simulation_button.grid(column = 0,row=3)
+simulation_button.grid(column = 0,row=5)
 
 domain_button = Button(root, text="Model and Sim.", width=12, bg="green", fg="white",command=run_domain_window)
-domain_button.grid(column = 0,row=4)
+domain_button.grid(column = 0,row=6)
 
 animation_button = Button(root, text="Animation", width=12, bg="green", fg="white",command=run_animation_window)
 #animation_button.grid(column = 0,row=5)
@@ -1142,7 +1143,7 @@ project_button = Button(root, text="Import Project", width=12, bg="green", fg="w
 import_project = Button(root, text="Import Project", width=12, bg="light grey", fg="black",command=open_text_file)
 import_project.place(x=0,y=160)
 
-run_bound_window()
+run_hydro_window()
 root.mainloop()
 
 '''
