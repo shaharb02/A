@@ -373,7 +373,7 @@ def run_hydro_window():
 		pass
 
 	hydrological = Toplevel()
-	hydrological.geometry("550x650")
+	hydrological.geometry("570x650")
 	hydrological.title("Hydrological")
 
 	def grey_global_k():
@@ -818,7 +818,7 @@ def run_bound_window():
 	except:
 		pass
 	bound_window = Toplevel()
-	bound_window.geometry("550x650")
+	bound_window.geometry("850x650")
 	bound_window.title("Boundary Conditions")
 	
 	
@@ -977,7 +977,7 @@ def run_domain_window():
 	except:
 		pass
 	domain_window = Toplevel()
-	domain_window.geometry("550x650")
+	domain_window.geometry("550x750")
 	domain_window.title("Model And Simulation")
 
 	def update_dx(*args):
@@ -994,7 +994,7 @@ def run_domain_window():
 	def draw_domain(*args):
 		try:
 			fig = collect_data(save=False)
-
+			fig.set_size_inches(5, 3)
 			canvas = FigureCanvasTkAgg(fig, master=domain5)
 			canvas.get_tk_widget().grid(row=1,column=24)
 			canvas.draw()
