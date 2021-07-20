@@ -19,6 +19,9 @@ if model_dir not in sys.path:
 
 from simulation import Simulation, particle_colors, markers
 
+import os.path
+from os import path
+
 root = Tk()
 root.geometry("150x210+1000+100")
 root.title("Main Menu")
@@ -338,6 +341,9 @@ def collect_data(save=True):
 	config["project_name"] = project_name.get()
 
 	if save:
+		if not os.path.exists('obj/'):
+			os.mkdir('obj/')
+			
 		with open('obj/'+ project_name.get() + '.pkl', 'wb') as f:
 			pickle.dump(config, f, pickle.HIGHEST_PROTOCOL)
 
